@@ -2,6 +2,7 @@ name: Deploy
 on: push
 jobs:
   lint:
+    name: Lint
     runs-on: ubuntu-latest
     steps:
       - name: Get code
@@ -15,6 +16,8 @@ jobs:
       - name: Run lint
         run: yarn lint
   deploy:
+    name: Deploy
+    needs: lint
     runs-on: ubuntu-latest
     steps:
       - name: Get code
