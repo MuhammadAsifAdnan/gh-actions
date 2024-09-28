@@ -41,4 +41,3 @@ jobs:
           path: |
             .next
             package.json
-          name: build
