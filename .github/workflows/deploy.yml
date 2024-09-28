@@ -34,5 +34,11 @@ jobs:
         run: npm ci
       - name: Build project
         run: npm run build
-      - name: Deploy
-        run: echo "Deploying..."
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: nextjs-build
+          path: |
+            .next
+            package.json
+          name: build
